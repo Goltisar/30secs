@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using WebApp.Data;
 using Serilog;
-
 
 namespace WebApp
 {
@@ -27,7 +25,6 @@ namespace WebApp
                 Log.Information("Building web host");
                 var host = CreateHostBuilder(args).Build();
                 Log.Information("Running web host");
-                host.PrepareDB();
 
                 host.Run();
             }
